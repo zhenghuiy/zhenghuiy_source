@@ -1,7 +1,7 @@
-title: "Android中保持Service的存活"
-date: 2014-06-16 10:44:31
-tags: alive, Android, Service, Android Service
+title: Android中保持Service的存活
+tags: 'alive, Android, Service, Android Service'
 categories: Android
+date: 2014-06-16 10:44:31
 ---
 如何让Service keep alive是一个很常见的问题。
 
@@ -14,7 +14,7 @@ categories: Android
 这两个方案有些地方需要说明和改进，然后还会有其他方案补充进来。
 
 
-###方案一：利用推送来确保Service存活。
+### 方案一：利用推送来确保Service存活。
 
 方案一的做法有点“偷懒”。因为相当于把这个难题转移给推送服务提供者来处理，或者说，只需要依靠推送，就不需要自己去考虑存活问题。
 
@@ -28,7 +28,7 @@ categories: Android
 
 回到Service这个问题上来，推送服务的提供者必然会保证推送技术的稳定性，依靠推送，可以唤醒我们的APP，那么保证Service的存活也就不在话下。
 
-###方案二：将Service运行在另一个进程中。
+### 方案二：将Service运行在另一个进程中。
 
 将Service放在另一个进程中，可以避免APP所在的进程因资源紧张或者被用户手动结束的时候，Service也被结束。
 
@@ -37,7 +37,7 @@ categories: Android
 当然，这个方案有个缺点是，当某些手机助手无脑式结束掉全部的非系统进程时，Service无法存活。
 <!--more-->
 
-###方案三：让onStartCommand（）函数的返回值为START_STICKY，同时在onDestroy（）中重启Service
+### 方案三：让onStartCommand（）函数的返回值为START_STICKY，同时在onDestroy（）中重启Service
 
 当返回值为该值时，Service被kill之后会被系统自动重启。
 
@@ -45,7 +45,7 @@ categories: Android
 
 但是显然的缺点是，当APP的进程被kill后，这个方案就会失效。
 
-###方案四：使用“守护Service”。
+### 方案四：使用“守护Service”。
 
 即除了你需要存活的Service外，专门写一个Service，并使该Service运行在另一个进程中。
 
@@ -53,7 +53,7 @@ categories: Android
 
 从手机中进程的数量上判断，搜狐视频、触宝号码助手等使用的正是该方式。
 
-###方案五：将Service所在的APP提升至系统应用级别
+### 方案五：将Service所在的APP提升至系统应用级别
 
 在配置文件中的Application节点做这样的设置：android:persistent=”true”可以将APP提升至系统级别。
 
@@ -61,13 +61,13 @@ categories: Android
 
 从手机中QQ被手动kill后系统出现的对话框判断，手机QQ正是使用的这一方案。     (7.28更新：通过仔细观察，新版的手机QQ在服务被停止后并不会自己重启)
 
-###方案六：接收系统的广播
+### 方案六：接收系统的广播
 
 可以用BroadCastReceiver去接收系统的广播，比如时间变化的广播、电量变化的广播等。
 
 这样基本上Service就无法被kill了。
 
-##总结：
+## 总结：
 
 能保证Service完全不会被杀死的方案是方案一和方案六。
 

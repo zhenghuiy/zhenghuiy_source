@@ -1,13 +1,15 @@
-title: "在github上参与开源项目"
-date: 2014-07-22 11:36:39
-tags: github, 参与开源项目
-categories: 记事
+title: 在github上参与开源项目
+tags:
+  - 'github, 参与开源项目'
+categories:
+  - 杂谈
+date: 2014-07-22 11:36:00
 ---
 近日用到一个不错的开源库[AndroidCharts](https://github.com/HackPlan/AndroidCharts)使用方便，易于扩展和自定制。在使用的过程中发现了一个小bug,于是果断发起了pull request。第一次使用GitHub参与开源项目还是十分手生的，需要各种查资料，学习Git的用法。
 
 参考了许多资料，这里记录一下在GitHub上参与开源项目的过程。 
 
-##1，寻找项目
+## 1，寻找项目
 
 可以是你使用到的项目，你觉得想参与的，或者在这里找：
 
@@ -15,7 +17,7 @@ categories: 记事
 - [GitHub Stars](https://github.com/stars?direction=desc&sort=created)：被其他人star过的项目（指的是你自己库的项目）。 
 - [GitHub Showcases](https://github.com/showcases)：一个能搜索相关库的方法。 
 
-##2，查看社区和文档
+## 2，查看社区和文档
 
 一般项目中都有的文件。
 
@@ -27,7 +29,7 @@ categories: 记事
 
 - Documentation and Wikis：许多大型项目有的不只有一个readme来指导人么如何使用他们的项目。在这种情况下你通常能够发现一个指向库中名为“docs”的另一个文件或文件夹的链接。
 
-##3，发起一个issue
+## 3，发起一个issue
 <!--more-->
 如果你发现了你正在使用的项目中的一个bug（但是你不知道怎么去修复它），或对文档有不解或对项目有疑问 — 那么创建一个话题吧！这非常容易且一般你不管创建什么话题，你都可能不是唯一一个出现该问题的人，所以其他人可能会发现你的话题很有帮助。关于更多的话题介绍，请查看我们的[Issues guide](https://guides.github.com/features/issues/index.html)。
 
@@ -39,12 +41,12 @@ categories: 记事
 - 包含一些系统相关的细节，比如用的什么浏览器、库或操作系统及版本号。 
 - 在你的话题或在 [Gist](https://gist.github.com/) 里贴出你的错误输出或日志。如果在话题里贴出来，请用三个反引号\`\`\` 包围起来使得能够良好的呈现给大家。
 
-##4，fork项目
+## 4，fork项目
 点击页面右上角处的fork按钮，这样github就会在你的帐户下fork一个同样的备份。
 
 ![](http://img.blog.csdn.net/20130712101759718?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZml2ZTM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
-##5,同步项目代码到本地
+## 5,同步项目代码到本地
 
 fork操作会将该项目添加到你帐户名下的项目主页面，有多种方式同步代码到本地。
 
@@ -56,23 +58,23 @@ fork操作会将该项目添加到你帐户名下的项目主页面，有多种�
 
 ![](http://img.blog.csdn.net/20130712102013640?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZml2ZTM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
-##6，创建分支
+## 6，创建分支
 
 不管你是为了修改bug还是扩展功能，都强烈建议你单独创建一个分支。
 
-##7，修改内容并提交
+## 7，修改内容并提交
 
 可以执行变更并创建commit以追踪具体变更内容。
 ```
 git commit −am "adding a smileyface to the documentation." 
 ```
-##8,推送
+## 8,推送
 
 把主题分支推送到自己的项目fork当中。
 ```
 git push origin your_branch_name
 ```
-##9,创建pull request
+## 9,创建pull request
 
 最后，需要创建一条pull request。首先，查看repo中的fork，我们可能会看到一条”您最近推送的分支”。如果结果确实如此，则可以选择”比较并pull request”。如果显示其它结果，则可以在下拉菜单中选择自己的分支，随后单击repo界面右上角的“pull request”或者“比较”按钮。
 
@@ -88,7 +90,7 @@ git push origin your_branch_name
 
 请注意，向项目管理员表达充分的尊重对于开源贡献而言非常重要；毕竟我们总是能够使用代码的分支版本，如果管理员不打算pull我们的变更，这往往与他们的角色定位有关。请记住，根据GitHub员工Zach Holman在《GitHub如何利用GitHub来创建GitHub》一文中所说，pull request实际属于对话的过程。最重要的是认同管理员的处理方式；相对于一味要求对方接受我们提交的内容，大家应当调整心态、只把提交过程视为与编写代码相关的对话通道。
 
-##后记：
+## 后记：
 
 第一次参与开源项目的感觉还是蛮不错的，希望作者能将我的提交合并。后续如果有时间，我想基于该项目自己定制一些Android上的图表（现在github上的图表要么是不美观几乎是为了股票的显示而生的那种图、要么是美观但是不易用）或者参考该项目，自己新写一个开源控件。
 

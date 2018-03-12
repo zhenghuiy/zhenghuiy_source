@@ -1,13 +1,15 @@
-title: "安装Genymotion模拟器全过程"
-date: 2014-05-07 21:32:50
-tags: Genymotion, 模拟器
-categories: 工具
+title: 安装Genymotion模拟器全过程
+tags:
+  - 'Genymotion, 模拟器'
+categories:
+  - 工具
+date: 2014-05-07 21:32:00
 ---
 今天在逛网站的时候，偶然看到一个号称“最火Android模拟神器”的Genymotion，它的特点简而言之就是秒开、方便、可与Eclipse相连——看介绍简直就是Android开发者的救星啊。
  
 心动不如行动，马上动手搞起。在这里记录下安装与使用的全过程，介绍类的语言大家去网上找找，我这里只简单描述，力求以最短的时间上手使用。
  
-##一，下载Genymotion
+## 一，下载Genymotion
  
  
 [进入官网](https://www.genymotion.com/)，简单的注册一下。
@@ -24,7 +26,7 @@ categories: 工具
 
 
  
-##二，安装Genymotion
+## 二，安装Genymotion
  
  
 软件安装过程不多表述，与一般的软件安装过程一致（我个人习惯是将安装目录从C盘改为D盘，不知道大家是否一样）。
@@ -63,7 +65,7 @@ Downloading….有事的去喝杯茶，上个厕所什么的。没事的可以�
 ![](http://zhenghuiy-blog.qiniudn.com/10.png)    
  
  
-##三，安装eclipse插件
+## 三，安装eclipse插件
  
  
 安装eclipse插件，有两种方法，这个和其他插件的安装是一样的。
@@ -96,7 +98,7 @@ Files\Genymobile\Genymotion（我之前安装的时候改成了D盘，所以这�
 ![](http://zhenghuiy-blog.qiniudn.com/14.png)    
 
 
-##四、开始享受新的模拟器吧！
+## 四、开始享受新的模拟器吧！
  
     
  

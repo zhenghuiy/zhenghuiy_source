@@ -3,7 +3,7 @@ date: 2014-08-03 15:05:35
 tags: Java, 单例
 categories: Java
 ---
-##前言：
+## 前言：
 
 近日在看Effective JAVA这本书，看到这一条的时候去网上查找下资料，发现了这篇写的不错的博客，因此觉得没有重复造轮子的必要，特此转载。
 
@@ -13,7 +13,7 @@ Inspired by Effective Java.
 
 Singleton模式是在编程实践中应用最广泛的几种设计模式之一。以前知道的，实现单例的方法有两种(下面的A、B)。刚刚在读《Effective Java的时候》学到一种新的更好的方法(E)：单元素的枚举类型。同时通过网上资料也知道了其他两种方法(C、D)。最后一种在Java中从1.5版本开始支持，其他语言在验证后说明。
 
-##A.饿汉式(类加载的时候就创建实例)。
+## A.饿汉式(类加载的时候就创建实例)。
 
 代码如下：
 ```
@@ -39,7 +39,7 @@ Call：MaYun.instance.splitAlipay();
 **Feature**：可以通过反射机制攻击；线程安全[多个类加载器除外]。
 <!--more-->
 
-##A+.饿汉变种[推荐]
+## A+.饿汉变种[推荐]
 ```
 public class MaYun {
 
@@ -65,7 +65,7 @@ public class MaYun {
 
 }
 ```
-##A++.饿汉变种(类初始化的时候实例化instance)：
+## A++.饿汉变种(类初始化的时候实例化instance)：
 ```
 public class MaYun {
     
@@ -97,7 +97,7 @@ public class MaYun {
 
 }
 ```
-##B.懒汉式。
+## B.懒汉式。
 
 代码如下：
 ```
@@ -135,7 +135,7 @@ Call：MaYun.getInstance().splitAlipay();
 ```
 **Feature**:延时加载；线程不安全，多线程下不能正常工作；需要额外的工作(Serializable、transient、readResolve())来实现序列化。
 
-##B+.懒汉式变种。
+## B+.懒汉式变种。
 ```
 public class MaYun {
     
@@ -169,7 +169,7 @@ public class MaYun {
 ```
 **Feature**:线程安全；效率比较低，因为需要线程同步的时候比较少。
 
-##C.静态内部类[推荐]。
+## C.静态内部类[推荐]。
 
 代码如下：
 ```
@@ -203,7 +203,7 @@ Call：MaYun.getInstance().splitAlipay();
 ```
 **Feature**:线程安全；延迟加载。
 
-##D.双重校验锁[不推荐]。
+## D.双重校验锁[不推荐]。
 
 代码如下：
 ```
@@ -237,7 +237,7 @@ public class MaYun {
 ```
 **Feature**：jdk1.5之后才能正常达到单例效果。
 
-##E.编写一个包含单个元素的枚举类型[极推荐]。
+## E.编写一个包含单个元素的枚举类型[极推荐]。
 
 代码如下：
 ```

@@ -1,14 +1,14 @@
-title: "Android 4.X界面开发那点事"
-date: 2014-05-27 10:18:53
-tags: Android, UI, 适配
+title: Android 4.X界面开发那点事
+tags: 'Android, UI, 适配'
 categories: Android
+date: 2014-05-27 10:18:53
 ---
-###前言：
+### 前言：
  
 为什么要使用dp/dip?导航栏的宽度/高度应该设为多少dp合适？一般情况下应该使每个控件的高度显示为多少？本文就是要回答这些问题。
  
  
-##一，Android中的各种单位
+## 一，Android中的各种单位
 
  
 在android开发过程中，我们无法忽略的一个问题就是设备适配问题。从我们刚开始学android的时候，各类教程上就不厌其烦的说，“android碎片化严重，适配很麻烦”、“控件的长度用dip作单位，字体用sp”等等。我们有必要去详细了解一下这些东西，在开发过程中才能游刃有余。
@@ -37,12 +37,12 @@ $$px = dp * (dpi / 160)$$
  
 因此，为了有更好的显示效果，按照google的推荐，字体使用sp为单位，其他元素使用dp为单位，需要缩放的图使用.9图。
  
-##二，Android中的尺寸
+## 二，Android中的尺寸
 
 Android系统现在已经百花齐放，手机、电视、平板、手表等等都可以刷进Android系统。它的开源性质造就了它远超其他系统的市场份额。就手机和平板而言，google官方将600dp以下为手机（handset）,600dp以上的为平板（tablet）.   
  
  
-###48dp
+### 48dp
 我们经常会有这样一个需求，就是显示一个小控件让用户输入或者单纯展示信息，比如一个EditText。
  
 ![](http://ww4.sinaimg.cn/large/8d608af3gw1egsz7ybfnmj20le02ujri.jpg) 
@@ -60,7 +60,7 @@ Android系统现在已经百花齐放，手机、电视、平板、手表等等�
  
 ![](http://ww4.sinaimg.cn/large/8d608af3gw1egsz9n827bj20md0fhq46.jpg)
 
-###后记：
+### 后记：
  
 参考资料为：http://developer.android.com/design/style/metrics-grids.html
  

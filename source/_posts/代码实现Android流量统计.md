@@ -3,7 +3,7 @@ date: 2014-07-23 12:16:15
 tags: Android, Android流量统计， Android流量
 categories: Android
 ---
-##概述
+## 概述
 
 尽管现在WIFI的覆盖范围越来越广，但是设备（在这里设备指手机或平板）流量的使用仍然是用户很关注的一个点。因此，在APP中加入流量统计模块对于提升用户体验（让用户可以知晓使用了多少流量，可以使用户使用APP时更加放心）有很大帮助。
 
@@ -13,7 +13,7 @@ Android使用的是Linux内核，在Linux系统里，所有信息都是以文件
 
 在Android2.2（API Level 8）之后，系统提供了TrafficStats类，我们可以通过该类来获取流量信息。需要注意一点的是，有些设备不支持流量统计，具体表现是，当调用TrafficStats的方法时将返回TrafficStats.UNSUPPORTED，这种情况下，我们需要自己去解析/sys/class/net/  下的log文件。
 
-##方法
+## 方法
 
 以下是TrafficStats类的一些主要方法（摘录自[android 官方API文档](http://developer.android.com/reference/android/net/TrafficStats.html)）：
 
@@ -54,13 +54,13 @@ Android使用的是Linux内核，在Linux系统里，所有信息都是以文件
     Return number of packets transmitted by the given UID since device boot.
 
 <!--more-->	
-##流程
+## 流程
 
 流量统计可以分为两个方面，一个是手机整体流量统计和单个app的流量统计。
 
 下面总结一下统计的流程。
 
-###手机整体流量：
+### 手机整体流量：
 1， 系统中存储的流量信息在关机之后会重置，因此我们应该使用一个``BroadcastReceiver``去接收关机广播，在每次关机的时候存储流量信息；
 
 2， 在获取数据前判断该设备是否支持TrafficStats，即方法返回值是否等于``TrafficStats.UNSUPPORTED``，如果不支持，则将下面的各个方法通过解析``/sys/class/net/ `` 下的log文件自己去实现。
@@ -77,7 +77,7 @@ Android使用的是Linux内核，在Linux系统里，所有信息都是以文件
 使用一个``BroadcastReceiver``监听WIFI状态变化，WIFI断开连接时``TrafficStats.getTotalTxBytes()`` – WIFI连接时``TrafficStats.getTotalTxBytes()``
 = 本次WIFI接收流量。再加上之前的存储，等于总的流量。
  
-###单个APP的流量：
+### 单个APP的流量：
 1，系统中存储的流量信息在关机之后会重置，因此我们应该使用一个``BroadcastReceiver``去接收关机广播，在每次关机的时候存储流量信息；
 
 2，在获取数据前判断该设备是否支持TrafficStats，即方法返回值是否等于``TrafficStats.UNSUPPORTED``，如果不支持，则将下面的各个方法通过解析``/sys/class/net/  ``下的log文件自己去实现。

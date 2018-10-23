@@ -53,4 +53,20 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
   </div>
 </article>
 
-<%- partial('comment') %>
+<% if ( page.comments){ %>
+<div id="container"></div>
+<link rel="stylesheet" href="https://blog-1254117687.cos.ap-shanghai.myqcloud.com/gitment.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: '<%= page.date %>',
+  owner: "zhenghuiy",//github用户名
+  repo: "zhenghuiy.github.io",//用户存储评论的github项目名称
+  oauth: {
+    client_id: '1da4e67bb2af468b7148',
+    client_secret: '54b019e8a77befdd5090d4e6fd07326f6ad01fb2',
+  },
+})
+gitment.render('container')
+</script>
+<% } %>

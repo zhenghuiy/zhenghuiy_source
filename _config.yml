@@ -7,12 +7,12 @@ title: Zhenghui's World
 subtitle: Write the code, change the world
 description:
 author: Zhenghui Yan
-email: zhenghuiy@gmail.com
+email: zhenghuiy@zhenghuiy.com
 language: zh-CN
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://zhenghuiy.github.io
+url: https://huihui.name
 root: /
 permalink: :year/:month/:day/:title/
 tag_dir: tags
@@ -88,5 +88,7 @@ exclude_generator:
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/zhenghuiy/zhenghuiy.github.io.git
+  repo: 
+    github: https://github.com/zhenghuiy/zhenghuiy.github.io.git,master
+    coding: https://git.coding.net/zhenghuiy/hexoblog.git,master
   branch: master
